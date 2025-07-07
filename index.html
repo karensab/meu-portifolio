@@ -3,80 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfólio Pessoal</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            
-            padding-top: 60px; 
-        }
-
-        /*  MENU DE NAVEGAÇÃO POR ABAS */
-        .tabs {
-            display: flex; 
-            background-color: #2c3e50; 
-            
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        .tabs button {
-            flex: 1; 
-            padding: 18px;
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s; 
-        }
-
-        .tabs button:hover,
-        .tabs button.active {
-            background-color: #34495e;
-            border-bottom: 3px solid #1abc9c; 
-        }
-
-        /*  CONTEÚDO DAS ABAS  */
-        .tab-content {
-            display: none; 
-            padding: 20px 40px; 
-            animation: fadeIn 0.5s; 
-        }
-
-        .tab-content.active {
-            display: block; 
-        }
-        /* ANIMAÇÃO AO TROCAR DE ABAS */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /*  FORMULÁRIO DE CONTATO */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            max-width: 500px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .contact-form button {
-            padding: 12px;
-            background-color: #1abc9c;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -92,8 +19,8 @@
     <div id="sobre-mim" class="tab-content active">
         <h2>Sobre mim</h2>
         <p>
-            Meu nome é Karen, tenho 30 anos. Meu principais hobbies assistir filmes e séries e jogar videogame. <br>
-            Também gosto de atividades ao livre como fazer trilhas, ir à cachoeiras.
+            Meu nome é Karen, tenho 30 anos. Meus principais hobbies são assistir filmes e séries, e jogar videogame. <br>
+            Também gosto de atividades ao ar livre como fazer trilhas e ir a cachoeiras.
         </p>
     </div>
 
@@ -101,8 +28,8 @@
         <h2>Formação acadêmica e Idiomas</h2>
         <p>
             <strong>Instituição:</strong> Centro Universitário Internacional - Uninter (2024 - em andamento) <br>
-            <strong>Curso:</strong> Análise e desenvolvimento de sistemas <br>
-            <br>
+            <strong>Curso:</strong> Análise e desenvolvimento de sistemas <br><br>
+
             <strong>Instituição:</strong> SENAI BH CECOTEG (2014)<br>
             <strong>Curso:</strong> Aprendizagem Industrial em Administração<br>
         </p>
@@ -115,9 +42,7 @@
 
     <div id="portfolio" class="tab-content">
         <h2>Portfólio</h2>
-        <p>
-            Abaixo estão alguns projetos que desenvolvi.
-        </p>
+        <p>Abaixo estão alguns projetos que desenvolvi.</p>
         <ul>
             <li><a href="https://www.figma.com/proto/YsbHjLtajvys7o2fKQtQes/Prot%C3%B3tipo-Disney----Karen-RU-4708055?node-id=1-4&t=3iVvWNwMF6xlTJGD-1&starting-point-node-id=1%3A4" target="_blank">Link para o Projeto 1</a></li>
             <li><a href="https://github.com/karensab/cofre-moedas" target="_blank">Link para o Projeto 2</a></li>  
@@ -128,7 +53,6 @@
         <h2>Contato</h2>
         <p>Preencha o formulário abaixo para entrar em contato.</p>
         
-        <!-- FORMULÁRIO DE CONTATO -->
         <form class="contact-form" onsubmit="return false;">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
@@ -143,23 +67,16 @@
         </form>
     </div>
 
-    <!-- SCRIPT PARA O FUNCIONAMENTO DAS ABAS -->
+    <!-- SCRIPT PARA FUNCIONAMENTO DAS ABAS -->
     <script>
-
         function openTab(evt, tabName) {
             const tabContents = document.querySelectorAll('.tab-content');
             const tabLinks = document.querySelectorAll('.tablink');
 
-            tabContents.forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            tabLinks.forEach(link => {
-                link.classList.remove('active');
-            });
+            tabContents.forEach(tab => tab.classList.remove('active'));
+            tabLinks.forEach(link => link.classList.remove('active'));
 
             document.getElementById(tabName).classList.add('active');
-
             evt.currentTarget.classList.add('active');
         }
     </script>
